@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DevDashboard is a simple web app with features like tech news, to-do lists and weather which help you organize your day more effectively"
+    />
+    <title>DevDashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Good Morning!</h1>
+      <span id="header-date"></span>
+      <button id="theme-toggle">Toggle theme</button>
+    </header>
+
+    <main>
+      <section id="weather">
+        <h2>Weather</h2>
+        <div class="weather-module"></div>
+      </section>
+
+      <section id="news">
+        <h2>Trending</h2>
+        <div class="news-module"></div>
+      </section>
+
+      <section id="todo">
+        <h2>To-Do List</h2>
+        <div class="todo-module"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p class="footer-p"><span class="footer-year"></span> &copy; taruros</p>
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
