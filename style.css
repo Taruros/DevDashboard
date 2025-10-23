@@ -44,7 +44,11 @@ body {
   font-size: 10px;
   display: grid;
   align-items: center;
-  /* transition: background 0.3s, color 0.3s; */
+  transition: background 0.3s, color 0.3s;
+}
+
+.wrapper {
+  padding: 0 20rem;
 }
 
 h1 {
@@ -58,8 +62,10 @@ header {
   align-items: center;
 }
 
-.wrapper {
-  padding: 0 20rem;
+.header-utilities {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .grid-2 {
@@ -69,6 +75,14 @@ header {
 }
 
 section {
-  background-color: pink;
+  background-color: #fcc5;
   padding: 10px;
+}
+
+#header-date {
+  font-size: 1.6rem;
+}
+
+section#todo {
+  grid-row: span 2;
 }
