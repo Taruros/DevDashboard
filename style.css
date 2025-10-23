@@ -28,3 +28,47 @@ textarea,
 select {
   font: inherit;
 }
+
+/*  */
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color: white;
+  background-color: #222;
+}
+
+body {
+  font-size: 10px;
+  display: grid;
+  align-items: center;
+  /* transition: background 0.3s, color 0.3s; */
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  align-items: center;
+}
+
+.wrapper {
+  padding: 0 20rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+section {
+  background-color: pink;
+  padding: 10px;
+}
