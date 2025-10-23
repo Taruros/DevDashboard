@@ -11,6 +11,7 @@
     <link rel="icon" href="./assets/icons/favicon.png" />
     <link rel="stylesheet" href="style.css" />
 
+    <!-- Initialize theme switching before the page loads so there's no white blink -->
     <script>
       const savedTheme = localStorage.getItem("theme");
       const prefersDark = window.matchMedia(
@@ -26,7 +27,7 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Good Morning!</h1>
+        <h1>Good Morning</h1>
         <div class="header-utilities">
           <time id="header-date"></time>
           <button id="theme-toggle">Toggle theme</button>

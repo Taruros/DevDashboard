@@ -1,6 +1,16 @@
 export function initDate() {
   const headerDate = document.querySelector("#header-date");
   const footerYear = document.querySelector("#footer-year");
+  const h1 = document.querySelector("h1");
+
+  // Setting header text to match the hour
+  let phaseOfDay;
+  let hour = new Date().getHours();
+  if (hour >= 5 && hour < 12) phaseOfDay = "Morning";
+  else if (hour >= 12 && hour < 17) phaseOfDay = "Afternoon";
+  else if (hour >= 17 && hour < 21) phaseOfDay = "Evening";
+  else phaseOfDay = "Night";
+  h1.textContent = `Good ${phaseOfDay}`;
 
   function updateDate() {
     const options = {
@@ -17,8 +27,6 @@ export function initDate() {
     headerDate.textContent = new Date().toLocaleString("en-US", options);
     footerYear.textContent = new Date().getFullYear();
   }
-
-  console.log(new Date().getHours());
 
   updateDate();
   setInterval(updateDate, 1000);
