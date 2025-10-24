@@ -6,10 +6,10 @@ export function initDate() {
   // Setting header text to match the hour
   let phaseOfDay;
   let hour = new Date().getHours();
-  if (hour >= 5 && hour < 12) phaseOfDay = "Morning";
-  else if (hour >= 12 && hour < 17) phaseOfDay = "Afternoon";
-  else if (hour >= 17 && hour < 21) phaseOfDay = "Evening";
-  else phaseOfDay = "Night";
+  if (hour >= 5 && hour < 12) phaseOfDay = "morning";
+  else if (hour >= 12 && hour < 17) phaseOfDay = "afternoon";
+  else if (hour >= 17 && hour < 21) phaseOfDay = "evening";
+  else phaseOfDay = "night";
   h1.textContent = `Good ${phaseOfDay}`;
 
   function updateDate() {
