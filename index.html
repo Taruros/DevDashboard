@@ -18,6 +18,7 @@
         "(prefers-color-scheme: dark)"
       ).matches;
       const theme = savedTheme || (prefersDark ? "dark" : "light");
+      localStorage.setItem("theme", theme);
       if (theme === "dark") {
         document.documentElement.classList.add("dark");
       }
