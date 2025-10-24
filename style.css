@@ -86,3 +86,11 @@ section {
 section#todo {
   grid-row: span 2;
 }
+
+ul {
+  list-style-type: none;
+}
+
+.todo-delete-btn {
+  margin-left: 0.5rem;
+}
