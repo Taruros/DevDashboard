@@ -5,6 +5,7 @@ export function initTodo() {
   input.placeholder = "Enter a task...";
 
   const addBtn = document.createElement("button");
+  addBtn.classList.add("btn", "btn-add-todo");
   addBtn.textContent = "Add";
 
   const list = document.createElement("ul");
@@ -21,7 +22,7 @@ export function initTodo() {
     li.textContent = todo.text;
 
     const delBtn = document.createElement("button");
-    delBtn.classList.add("todo-delete-btn");
+    delBtn.classList.add("btn", "btn-todo-delete");
     delBtn.textContent = "X";
 
     // Removing a to-do
