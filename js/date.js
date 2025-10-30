@@ -15,16 +15,11 @@ export function initDate() {
   function updateDate() {
     const options = {
       weekday: "long",
-      year: "numeric",
       month: "short",
       day: "numeric",
-      hour: "numeric",
-      minute: "numeric",
-      second: "numeric",
-      hourCycle: "h24",
     };
 
-    headerDate.textContent = new Date().toLocaleString("en-US", options);
+    headerDate.textContent = new Date().toLocaleDateString("en-US", options);
     footerYear.textContent = new Date().getFullYear();
   }
 
