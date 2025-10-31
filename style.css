@@ -72,6 +72,24 @@ h2 {
   margin-bottom: 2rem;
 }
 
+input,
+textarea,
+button {
+  border: 1px solid var(--text-color);
+  outline: none;
+  border-radius: 5px;
+  padding: 0.25rem 0.5rem;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px var(--accent-color);
+}
+
 .btn {
   background: none;
   color: var(--text-color);
@@ -80,7 +98,6 @@ h2 {
   font-size: 1rem;
   font-weight: 600;
   padding: 0.25rem 0.75rem;
-  border-radius: 5px;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
     box-shadow 0.2s ease;
 }
@@ -137,19 +154,9 @@ section#todo {
 input {
   background: var(--bg-color);
   color: var(--text-color);
-  border: 1px solid var(--text-color);
-  outline: none;
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 1rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: 5px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-input:focus-visible {
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 2px var(--accent-color);
 }
 
 .btn-add-todo {
@@ -171,16 +178,16 @@ li {
 .btn-todo-delete {
   background: none;
   color: tomato;
-  border: none;
+  border-color: transparent;
   margin-left: 0.5rem;
-  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn-todo-delete:hover,
 .btn-todo-delete:active {
   color: white;
   background-color: tomato;
-  box-shadow: none;
+  border-color: transparent;
+  /* box-shadow: none; */
 }
 
 footer {
