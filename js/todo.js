@@ -2,6 +2,8 @@ export function initTodo() {
   const todoContainer = document.querySelector(".todo-module");
 
   const input = document.createElement("input");
+  input.id = "input-todo";
+  input.name = "todo";
   input.placeholder = "Enter a task...";
 
   const addBtn = document.createElement("button");
