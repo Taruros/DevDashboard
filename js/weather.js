@@ -36,6 +36,12 @@ function renderWeather({ location, weather }) {
 }
 
 export async function initWeather() {
-  const data = await fetchWeather();
-  renderWeather(data);
+  try {
+    const data = await fetchWeather();
+    renderWeather(data);
+  } catch (error) {
+    document.querySelector(".weather-module").textContent =
+      "Error while loading weather";
+    console.error(error);
+  }
 }
