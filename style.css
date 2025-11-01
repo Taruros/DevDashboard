@@ -143,6 +143,22 @@ section {
   font-size: 1rem;
 }
 
+.weather-module {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.weather-current {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.weather-span {
+  font-size: 1.5rem;
+}
+
 section#todo {
   grid-row: span 2;
 }
