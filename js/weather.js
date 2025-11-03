@@ -1,4 +1,10 @@
 async function fetchWeather() {
+  const timestamp = Date.now();
+  const cached = JSON.parse(localStorage.getItem("weatherData")) || null;
+  if (cached && timestamp - cached.timestamp < 15 * 60 * 1000) {
+    return cached.data;
+  }
+
   const key = "374d93e7dd324640aa3213201252910";
   const location = await fetch("https://ipapi.co/json").then((x) => x.json());
   const url = `https://api.weatherapi.com/v1/current.json?key=${key}&q=${location.city}`;
@@ -6,6 +12,14 @@ async function fetchWeather() {
   const req = await fetch(url);
   if (!req.ok) throw new Error(req.status);
   const weather = await req.json();
+
+  localStorage.setItem(
+    "weatherData",
+    JSON.stringify({
+      timestamp,
+      data: { location, weather },
+    })
+  );
 
   return { location, weather };
 }
@@ -42,6 +56,6 @@ export async function initWeather() {
   } catch (error) {
     document.querySelector(".weather-module").textContent =
       "Error while loading weather";
-    console.error(error);
+    console.error("Weather module error: ", error);
   }
 }
