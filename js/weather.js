@@ -5,7 +5,10 @@ async function fetchWeather() {
     return cached.data;
   }
 
-  const location = await fetch("https://ipapi.co/json").then((x) => x.json());
+  const { city, country_name } = await fetch("https://ipapi.co/json").then(
+    (x) => x.json()
+  );
+  const location = { city, country_name };
   const url = `https://devdashboard.vercel.app/api/weather?city=${location.city}`;
 
   const req = await fetch(url);
