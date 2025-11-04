@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     const data = await response.json();
 
     // Allow frontend to access this data
-    res.setHeader("Access-Control-Allow-Origin", "taruros.github.io");
+    res.setHeader("Access-Control-Allow-Origin", "https://taruros.github.io");
     res.status(200).json(data);
   } catch (error) {
     res.status(500).json({ error: error.message });
