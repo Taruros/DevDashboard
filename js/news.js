@@ -6,7 +6,7 @@ async function fetchNews() {
   }
 
   const apiKey = "d1e3c73330634ac98e45c1533ca3235f";
-  const url = `https://newsapi.org/v2/top-headlines?apiKey=${apiKey}&country=us&pageSize=4&category=technology&category=science
+  const url = `https://newsapi.org/v2/top-headlines?apiKey=${apiKey}&country=us&pageSize=4&category=technology
   `;
   const req = await fetch(url);
   if (!req.ok) throw new Error(req.status);
