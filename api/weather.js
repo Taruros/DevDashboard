@@ -1,10 +1,11 @@
 export default async function handler(req, res) {
   try {
-    const apiKey = process.env.GNEWS_API_KEY;
-    const apiUrl = `https://gnews.io/api/v4/top-headlines?apikey=${apiKey}&lang=en&country=us&max=4`;
+    const apiKey = process.env.WEATHER_API_KEY;
+    const { city } = req.query;
+    const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
 
     const response = await fetch(apiUrl);
-    if (!response.ok) throw new Error(`API error: ${response.status}`);
+    if (!response.ok) throw new Error("API error:", response.status);
 
     const data = await response.json();
 
