@@ -5,8 +5,7 @@ async function fetchNews() {
     return cached.data;
   }
 
-  const apiKey = "e73b39d3604273fc01607d619b3d8327";
-  const url = `https://gnews.io/api/v4/top-headlines?apikey=${apiKey}&lang=en&country=us&max=4`;
+  const url = `https://devdashboard.vercel.app/api/news`;
   const req = await fetch(url);
   if (!req.ok) throw new Error(req.status);
   const news = await req.json();
