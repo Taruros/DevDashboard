@@ -5,9 +5,8 @@ async function fetchNews() {
     return cached.data;
   }
 
-  const apiKey = "d1e3c73330634ac98e45c1533ca3235f";
-  const url = `https://newsapi.org/v2/top-headlines?apiKey=${apiKey}&country=us&pageSize=4&category=technology
-  `;
+  const apiKey = "e73b39d3604273fc01607d619b3d8327";
+  const url = `https://gnews.io/api/v4/top-headlines?apikey=${apiKey}&lang=en&country=us&max=4`;
   const req = await fetch(url);
   if (!req.ok) throw new Error(req.status);
   const news = await req.json();
@@ -35,7 +34,7 @@ function renderNews(articles) {
 
     const image = document.createElement("img");
     image.classList.add("news-image");
-    image.src = article.urlToImage || "./assets/images/news-placeholder.png";
+    image.src = article.image || "./assets/images/news-placeholder.png";
 
     const title = document.createElement("h3");
     title.classList.add("news-title");
