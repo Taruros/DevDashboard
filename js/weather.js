@@ -5,9 +5,9 @@ async function fetchWeather() {
     return cached.data;
   }
 
-  const key = "374d93e7dd324640aa3213201252910";
+  const apiKey = "374d93e7dd324640aa3213201252910";
   const location = await fetch("https://ipapi.co/json").then((x) => x.json());
-  const url = `https://api.weatherapi.com/v1/current.json?key=${key}&q=${location.city}`;
+  const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location.city}`;
 
   const req = await fetch(url);
   if (!req.ok) throw new Error(req.status);
