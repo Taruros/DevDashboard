@@ -46,7 +46,7 @@ export async function initTrending() {
     renderTrending(data);
   } catch (error) {
     document.querySelector(".trending-module").textContent =
-      "Error while loading trending repos";
+      "Couldn't load trending repositories. Try again later.";
     console.error("Trending module error: ", error);
   }
 }

@@ -34,6 +34,7 @@ function renderNews(articles) {
     const image = document.createElement("img");
     image.classList.add("news-image");
     image.src = article.image || "./assets/images/news-placeholder.png";
+    image.loading = "lazy";
 
     const title = document.createElement("h3");
     title.classList.add("news-title");
@@ -59,7 +60,7 @@ export async function initNews() {
     renderNews(articles);
   } catch (error) {
     document.querySelector(".news-module").textContent =
-      "Error while loading news";
+      "Couldn't load news data. Try again later.";
     console.error("News module error: ", error);
   }
 }
